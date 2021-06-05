@@ -45,7 +45,7 @@ h1{
     left: 70px;
     top: 20px;
 }
-span{
+.spantitle{
     font-family: 'Italianno', cursive;
     position: relative;
     top: 10px;
@@ -54,13 +54,15 @@ span{
 }
 .main{
     background-color: rgb(16,24,32,0.3);
+    /* display: flex;
+    justify-content: center; */
 }
 .mainPic{
     
 display: flex;
 justify-content: center;
 }
-img{
+#img{
     margin: 15px;
     border-radius: 10%;
     width: 500px;
@@ -103,9 +105,56 @@ p{
     justify-content: space-between;
 }
 .footerspan{
+    font-family: 'Italianno', cursive;
     position: relative;
     font-size: 25px;
     padding: 20px;
     left: 30px;
 margin-right: 35px;
 }
+h2{
+    font-family: 'Dancing Script', cursive;
+    font-size: 33px;
+}
+.Menu{
+    display: flex;
+    margin-left: 35px;
+    flex-direction: column;  
+}
+a{
+    text-decoration: none;
+    margin: 10px;
+    outline: none;
+    font-family: 'Dancing Script', cursive; 
+    font-size: 23px;
+    color:rgb(16,24,32,0.8);
+    font-weight: bold;
+  
+}
+.beverages{
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    align-items: center;
+
+}
+.menuPics{
+    margin: 20px;
+    border-radius: 10%;
+    width: 200px;
+    height: 150px;
+    grid-column: 2;
+    
+}
+.beverages>h3{
+  grid-column: 2;  
+  grid-row: 1/1;
+}
+
+  .beverages>span{
+    font-family: 'Italianno', cursive;
+    font-size: 30px;
+   position: relative;
+   right: 160px;
+
+   
+  }
