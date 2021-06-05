@@ -8,7 +8,7 @@ body{
   height: 100vh;
 align-items: center;
 } */
-#title{
+.title{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -55,7 +55,7 @@ span{
 .home{
     background-color: rgb(16,24,32,0.3);
 }
-#mainPic{
+.mainPic{
     
 display: flex;
 justify-content: center;
