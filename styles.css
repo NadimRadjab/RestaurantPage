@@ -1,0 +1,111 @@
+body{
+  margin: 0;
+}
+/* #content{
+    display: flex;
+    flex-direction: column;
+  max-width: 2000px;
+  height: 100vh;
+align-items: center;
+} */
+#title{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    overflow: hidden;
+    background-color: rgb(16,24,32,0.7);
+    max-width: 2000px;
+    height: 120px;
+}
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+   margin-bottom: 25px;
+   height: 50px;
+}
+button{
+    font-family: 'Dancing Script', cursive;
+    font-size: 27px;
+    background-color: inherit;
+   border: none;
+    margin: 10px;
+    color: rgb(16,24,32,0.9);;
+}
+button:hover{
+    background-color: rgb(16,24,32,0.2);
+}
+button:active{
+    border-bottom: white solid 2px;
+}
+h1{
+    font-family: 'Italianno', cursive;
+    font-size: 40px;
+    position: relative;
+    left: 70px;
+    top: 20px;
+}
+span{
+    font-family: 'Italianno', cursive;
+    position: relative;
+    top: 10px;
+    left: 70px;
+    font-size: 30px;
+}
+.home{
+    background-color: rgb(16,24,32,0.3);
+}
+#mainPic{
+    
+display: flex;
+justify-content: center;
+}
+img{
+    margin: 15px;
+    border-radius: 10%;
+    width: 500px;
+    height: 350px;
+}
+.text{
+    font-size: 20px;
+    font-family: 'Dancing Script', cursive;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+h3{
+  margin: 30px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 30px;
+}
+.hours{
+display: flex;
+flex-direction: column;
+margin-left: 700px;
+    width: 250px;
+    height: 300px;  
+}
+.hours >span{
+    font-size: 30px;
+    margin: 10px;
+    left: 50px;
+}
+p{
+    font-size: 23px;
+}
+.footer{
+    overflow: hidden;
+    background-color: rgb(16,24,32,0.7);
+    max-width: 2000px;
+    display: flex;
+    height: 70px;
+    justify-content: space-between;
+}
+.footer>span{
+    position: relative;
+    font-size: 25px;
+    padding: 20px;
+    left: 30px;
+margin-right: 35px;
+}
