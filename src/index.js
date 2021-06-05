@@ -1,2 +1,2 @@
-import { loadingPage } from './LoadingPage'
-import { homePage } from './home'
+// import { loadingPage } from './LoadingPage'
+// import { homePage } from './home'

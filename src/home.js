@@ -32,7 +32,6 @@ const homePage = (() => {
                     spans.classList.add('hoursspan')
                     spans.textContent = spanText[j]
                     contentDivs.append(spans)
-                    console.log([j])
                 }
 
 
