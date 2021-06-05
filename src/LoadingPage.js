@@ -18,6 +18,7 @@ const loadingPage = (() => {
         navDiv.classList.add('nav')
         mainDiv.classList.add('main')
         footerDiv.classList.add('footer');
+        navSpan.classList.add('spantitle')
         h1.textContent = "Andreea's Pizza and Pasta";
         navSpan.textContent = 'A Slice of Heaven';
         contentDiv.append(titleDiv);
