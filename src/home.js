@@ -1,25 +1,30 @@
 const homePage = () => {
     const divClasses = ['mainPic', 'text', 'hours'];
     const spanText = ['Mon-Friday: 8:00 - 19:00', ' Satarday: 8:00 - 15:00', 'Sunday : Closed'];
-    // const contentDiv = document.querySelector('#content')
     const mainDiv = document.querySelector('.main');
     const img = document.createElement('img');
     const h2 = document.createElement('h2');
     const p = document.createElement('p');
     const h3 = document.createElement('h3');
-    const menuDiv = document.createElement('div')
-    menuDiv.setAttribute('id', 'remove')
-    menuDiv.classList.add('remove')
-    mainDiv.append(menuDiv);
+    const homeDiv = document.createElement('div')
+    homeDiv.classList.add('homeD')
+    mainDiv.append(homeDiv);
 
-    const removeButton = document.querySelector('#Menu')
-    const stopButton = document.querySelector('#Home')
-    stopButton.disabled = true;
 
-    removeButton.addEventListener('click', () => {
-        stopButton.disabled = false;
-        menuDiv.remove()
+    const homeButton = document.querySelector('#Home');
+    homeButton.disabled = true;
+
+    const menuButton = document.querySelector('#Menu');
+    menuButton.addEventListener('click', () => {
+        homeButton.disabled = false;
+        homeDiv.remove();
     })
+
+    const contactsButton = document.querySelector('#Contact');
+    contactsButton.addEventListener('click', () => {
+        homeButton.disabled = false;
+        homeDiv.remove();
+    });
 
 
     const homePageFunc = () => {
@@ -32,7 +37,7 @@ const homePage = () => {
         for (let i = 0; i < divClasses.length; i++) {
             const contentDivs = document.createElement('div');
             contentDivs.classList.add(divClasses[i]);
-            menuDiv.append(contentDivs)
+            homeDiv.append(contentDivs)
 
             if (contentDivs.classList.contains('mainPic')) {
                 contentDivs.append(img);

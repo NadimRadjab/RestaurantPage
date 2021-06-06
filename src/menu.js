@@ -1,6 +1,9 @@
+import { contacts } from "./contacts";
+
 const menu = () => {
     const divClasses = ['Menu', 'beverages', 'pizzas', 'pastas', 'desserts'];
     const aTagText = ['Beverages', 'Pizzas', 'Pastas', 'Desserts'];
+    const aTagHref = ['#beverages', '#pizzas', '#pastas', '#desserts'];
     const pizzaPics = ['imgs/pizza-margherita.jpg', 'imgs/pizza-fontina.jpg', 'imgs/pizza-siciliana.jpg',
         'imgs/pizza-padellino.jpg'];
     const beveragesPics = ['imgs/cola.jpg', 'imgs/sprite.jpg']
@@ -9,20 +12,26 @@ const menu = () => {
     const spanI = ['Ingredients: Dough, tomato sauce, cheese.', 'Ingredients: Eggs, dough, fontina cheese, parsley.', 'Ingredients: Dough, tomato sause, sausages , Basil leaves.',
         'Ingredients: Dough, Mozzarella, plum tomato,Olive oil,fresh basil leaves.'
     ];
+
+
     const mainDiv = document.querySelector('.main')
     const h2 = document.createElement('h2')
     const menuDiv = document.createElement('div')
-    menuDiv.setAttribute('id', 'remove')
+
     menuDiv.classList.add('remove')
     mainDiv.append(menuDiv);
+
     const menuB = document.querySelector('#Menu')
     menuB.disabled = true;
-    menuB.addEventListener('click', () => {
 
-    });
+    const contactsB = document.querySelector("#Contact")
+    contactsB.addEventListener('click', () => {
+        menuB.disabled = false;
+        menuDiv.remove()
+    })
+
 
     const homeB = document.querySelector('#Home')
-
     homeB.addEventListener('click', () => {
         menuB.disabled = false;
         menuDiv.remove()
@@ -35,7 +44,8 @@ const menu = () => {
         h2.textContent = 'Menu'
         for (let i = 0; i < divClasses.length; i++) {
             const menuDivs = document.createElement('div');
-            menuDivs.classList.add(divClasses[i])
+            menuDivs.classList.add(divClasses[i]);
+            menuDivs.setAttribute('id', divClasses[i]);
             menuDiv.append(menuDivs)
 
             if (menuDivs.classList.contains('Menu')) {
@@ -43,6 +53,7 @@ const menu = () => {
                 for (let j = 0; j < aTagText.length; j++) {
                     const aTags = document.createElement('a');
                     aTags.textContent = aTagText[j];
+                    aTags.href = aTagHref[j]
                     menuDivs.append(aTags);
                 }
 
