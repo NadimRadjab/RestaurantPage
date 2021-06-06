@@ -1,4 +1,14 @@
-const menu = () => {
+(self["webpackChunkrestaurantpage"] = self["webpackChunkrestaurantpage"] || []).push([[2],{
+
+/***/ 2:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "menu": () => (/* binding */ menu)
+/* harmony export */ });
+const menu = (() => {
     const divClasses = ['Menu', 'beverages', 'pizzas', 'pastas', 'desserts'];
     const aTagText = ['Beverages', 'Pizzas', 'Pastas', 'Desserts'];
     const pizzaPics = ['imgs/pizza-margherita.jpg', 'imgs/pizza-fontina.jpg', 'imgs/pizza-siciliana.jpg',
@@ -15,16 +25,9 @@ const menu = () => {
     menuDiv.setAttribute('id', 'remove')
     menuDiv.classList.add('remove')
     mainDiv.append(menuDiv);
-    const menuB = document.querySelector('#Menu')
-    menuB.disabled = true;
-    menuB.addEventListener('click', () => {
+    const removeButton = document.querySelector('#Home')
 
-    });
-
-    const homeB = document.querySelector('#Home')
-
-    homeB.addEventListener('click', () => {
-        menuB.disabled = false;
+    removeButton.addEventListener('click', () => {
         menuDiv.remove()
     })
 
@@ -149,13 +152,15 @@ const menu = () => {
     return {
         menuFunc
     }
-};
+})();
 
 
 
 
 
 
-export {
-    menu
-}
+
+
+/***/ })
+
+}]);

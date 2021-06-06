@@ -7,6 +7,17 @@ const homePage = (() => {
     const h2 = document.createElement('h2');
     const p = document.createElement('p');
     const h3 = document.createElement('h3');
+    const menuDiv = document.createElement('div')
+    menuDiv.setAttribute('id', 'remove')
+    menuDiv.classList.add('remove')
+    mainDiv.append(menuDiv);
+
+    const removeButton = document.querySelector('#Menu')
+
+    removeButton.addEventListener('click', () => {
+        menuDiv.remove()
+    })
+
 
 
     const homePageFunc = () => {
@@ -19,7 +30,7 @@ const homePage = (() => {
         for (let i = 0; i < divClasses.length; i++) {
             const contentDivs = document.createElement('div');
             contentDivs.classList.add(divClasses[i]);
-            mainDiv.append(contentDivs)
+            menuDiv.append(contentDivs)
 
             if (contentDivs.classList.contains('mainPic')) {
                 contentDivs.append(img);
@@ -40,12 +51,13 @@ const homePage = (() => {
 
         };
     }
-    homePageFunc();
+    homePageFunc()
 
     return {
         homePageFunc
     }
 
-})()
+})();
+
 
 export { homePage }
