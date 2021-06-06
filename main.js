@@ -276,7 +276,7 @@ const menu = () => {
 
                 const pastaImg = document.createElement('img');
                 pastaImg.classList.add('menuPics');
-                pastaImg.src = 'imgs/pasta-cannelloni.jpg'
+                pastaImg.src = 'Imgs/pasta-cannelloni.jpg'
                 menuDivs.append(pastaImg);
 
                 const spanPasta = document.createElement('span');
