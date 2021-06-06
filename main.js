@@ -116,7 +116,7 @@ const homePage = () => {
 
 
     const homePageFunc = () => {
-        img.src = "imgs/3.jpg";
+        img.src = "Imgs/3.jpg";
         img.setAttribute('id', 'img')
         h2.textContent = 'The best Pizza in Germany since 1992';
         p.textContent = 'Andrea`s Pizza provide variety of pizzas and pastas,  and also includes custom made Pizzas.'
@@ -170,9 +170,9 @@ const menu = () => {
     const divClasses = ['Menu', 'beverages', 'pizzas', 'pastas', 'desserts'];
     const aTagText = ['Beverages', 'Pizzas', 'Pastas', 'Desserts'];
     const aTagHref = ['#beverages', '#pizzas', '#pastas', '#desserts'];
-    const pizzaPics = ['imgs/pizza-margherita.jpg', 'imgs/pizza-fontina.jpg', 'imgs/pizza-siciliana.jpg',
-        'imgs/pizza-padellino.jpg'];
-    const beveragesPics = ['imgs/cola.jpg', 'imgs/sprite.jpg']
+    const pizzaPics = ['Imgs/pizza-margherita.jpg', 'Imgs/pizza-fontina.jpg', 'Imgs/pizza-siciliana.jpg',
+        'Imgs/pizza-padellino.jpg'];
+    const beveragesPics = ['Imgs/cola.jpg', 'Imgs/sprite.jpg']
     const spanB = ['Coca Cola 2,20$', 'Sprite 2,20$']
     const spanP = ['Pizza Margherita 9,25$', 'Pizza Fontina 11,55$', 'Pizza Siciliana 14,20$', 'Pizza Padellino 16,30$']
     const spanI = ['Ingredients: Dough, tomato sauce, cheese.', 'Ingredients: Eggs, dough, fontina cheese, parsley.', 'Ingredients: Dough, tomato sause, sausages , Basil leaves.',
@@ -317,8 +317,8 @@ const menu = () => {
 
         }
 
-    }
-    menuFunc()
+    };
+    menuFunc();
 
 
     return {
