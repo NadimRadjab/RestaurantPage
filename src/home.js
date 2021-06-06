@@ -1,4 +1,4 @@
-const homePage = (() => {
+const homePage = () => {
     const divClasses = ['mainPic', 'text', 'hours'];
     const spanText = ['Mon-Friday: 8:00 - 19:00', ' Satarday: 8:00 - 15:00', 'Sunday : Closed'];
     // const contentDiv = document.querySelector('#content')
@@ -13,11 +13,13 @@ const homePage = (() => {
     mainDiv.append(menuDiv);
 
     const removeButton = document.querySelector('#Menu')
+    const stopButton = document.querySelector('#Home')
+    stopButton.disabled = true;
 
     removeButton.addEventListener('click', () => {
+        stopButton.disabled = false;
         menuDiv.remove()
     })
-
 
 
     const homePageFunc = () => {
@@ -57,7 +59,7 @@ const homePage = (() => {
         homePageFunc
     }
 
-})();
+};
 
 
 export { homePage }

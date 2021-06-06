@@ -139,20 +139,11 @@ const menu = () => {
     }
     menuFunc()
 
-    const test = () => {
-        if (menuDiv.classList.contains('remove')) {
-            menuDiv.remove()
-        }
-
-    }
 
     return {
         menuFunc
     }
 };
-
-
-
 
 
 

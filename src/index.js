@@ -1,7 +1,8 @@
-import { loadingPage, homePage } from './LoadingPage'
+// import { loadingPage, } from './LoadingPage'
 // import { homePage } from './home'
-import { menu, } from './menu'
+// import { menu } from './menu'
 
+homePage()
 
 const homeButton = document.querySelector('#Home')
 

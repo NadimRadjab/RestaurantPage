@@ -211,3 +211,27 @@ a{
     grid-template-columns: repeat(4, 2fr);
     align-items: center;
   }
+
+
+
+
+  /* Contacts */
+ .contacts{
+    
+    font-family: 'Italianno', cursive;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+ }
+ .fSpan{
+margin: 25px;
+    font-family: 'Italianno', cursive;
+    font-size: 30px; 
+ }
+ p{
+     margin: 25px;
+    font-size: 30px; 
+ }
+ svg{
+    margin-bottom: 50px;
+ }
