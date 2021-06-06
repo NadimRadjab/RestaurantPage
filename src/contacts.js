@@ -5,23 +5,29 @@ const contacts = () => {
     const contactsDiv = document.createElement('div');
     contactsDiv.classList.add('contacts');
     mainDiv.append(contactsDiv);
-    const h2 = document.createElement('h2')
+    const h2 = document.createElement('h2');
     const contactsButton = document.querySelector('#Contact');
 
-
     contactsButton.disabled = true;
+    contactsButton.classList.add('active');
 
     const homeButton = document.querySelector('#Home');
     homeButton.disabled = false;
+    homeButton.classList.remove('active');
+
     const menuButton = document.querySelector('#Menu');
     menuButton.addEventListener('click', () => {
+
         contactsButton.disabled = false;
         contactsDiv.remove();
     });
+    menuButton.classList.remove('active');
+
     homeButton.addEventListener('click', () => {
         contactsButton.disabled = false;
         contactsDiv.remove();
     });
+
 
 
     const contactsStuff = () => {
@@ -43,34 +49,15 @@ const contacts = () => {
         contactsDiv.append(pframe);
         pframe.append(iframe);
 
-        // const fSpan = document.createElement('span');
-        // fSpan.classList.add('fSpan');
-        // fSpan.textContent = 'Follow us on';
-        // contactsDiv.append(fSpan);
-
-        // const vSpan = document.createElement('span');
-        // contactsDiv.append(vSpan)
-
-        // const svg = document.createElement('svg')
-        // vSpan.append(svg);
-        // svg.height = "40";
-        // svg.width = "40"
-        // svg.viewBox = "126.445 2.281 589 589"
-        // svg.xmlns = "http://www.w3.org/2000/svg";
+        const fSpan = document.createElement('span');
+        fSpan.classList.add('fSpan');
+        fSpan.textContent = 'Follow us on';
+        contactsDiv.append(fSpan);
+        const aF = document.createElement('a');
+        aF.innerHTML = '<i class="fab fa-facebook"></i>';
+        contactsDiv.append(aF);
 
 
-        // const circle = document.createElement('circle')
-        // circle.cx = "420.945";
-        // circle.cy = "296.781";
-        // circle.fill = "#3c5a9a";
-        // circle.r = "294.5";
-        // svg.append(circle);
-
-        // const path = document.createElement('path')
-        // path.d = "m516.704 92.677h-65.239c-38.715 0-81.777 16.283-81.777 72.402.189 19.554 0 38.281 0 59.357h-44.788v71.271h46.174v205.177h84.847v-206.531h56.002l5.067-70.117h-62.531s.14-31.191 0-40.249c0-22.177 23.076-20.907 24.464-20.907 10.981 0 32.332.032 37.813 0v-70.403z";
-        // path.fill = "#fff";
-
-        // svg.append(path)
 
 
     }

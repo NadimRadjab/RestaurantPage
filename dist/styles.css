@@ -1,13 +1,6 @@
 body{
   margin: 0;
 }
-/* #content{
-    display: flex;
-    flex-direction: column;
-  max-width: 2000px;
-  height: 100vh;
-align-items: center;
-} */
 
 
 /* Main Page */
@@ -24,8 +17,9 @@ align-items: center;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-   margin-bottom: 25px;
+   margin-bottom: 40px;
    height: 50px;
+   
 }
 
 button{
@@ -34,24 +28,28 @@ button{
     background-color: inherit;
    border: none;
     margin: 10px;
-    color: rgb(16,24,32,0.9);;
+    color: #af9164;
+}
+.active{
+   border-bottom: #af9164 2px solid;
+   transform: scale(1.3)
 }
 button:hover{
     background-color: rgb(16,24,32,0.2);
 }
-button:active{
-    border-bottom: white solid 2px;
-}
+
 h1{
     font-family: 'Italianno', cursive;
     font-size: 40px;
     position: relative;
+    color: #af9164;
     left: 70px;
     top: 20px;
 }
 .spantitle{
     font-family: 'Italianno', cursive;
     position: relative;
+    color: #af9164;
     top: 10px;
     font-size: 35px;
 }
@@ -84,21 +82,25 @@ justify-content: center;
 }
 h3{
   margin: 30px;
+  color: rgb(16,24,32,0.8);
     font-family: 'Dancing Script', cursive;
     font-size: 30px;
 }
 .hours{
 display: flex;
 flex-direction: column;
-margin-left: 700px;
-    width: 250px;
+align-items: center;
     height: 300px;  
+}
+.hours>h3{
+    color: rgb(16,24,32,0.8);
 }
 .hoursspan{
     font-family: 'Italianno', cursive;
     font-size: 30px;
     margin: 10px;
     left: 50px;
+    color: rgb(16,24,32,0.8);
 }
 p{
     font-size: 23px;
@@ -111,21 +113,24 @@ Footer */
     max-width: 2000px;
     display: flex;
     height: 70px;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
 }
 .footerspan{
+    color: #af9164;
     font-family: 'Italianno', cursive;
     position: relative;
     font-size: 25px;
     padding: 20px;
-    left: 30px;
-margin-right: 35px;
+    
 }
+
 
 
 h2{
     font-family: 'Dancing Script', cursive;
     font-size: 33px;
+    color: rgb(16,24,32,0.8);
 }
 
 
@@ -149,17 +154,21 @@ a{
     font-weight: bold;
   
 }
+a:hover{
+    color: #af9164;
+}
 
 
 /* Beverages */
 .beverages{
+    margin: 25px;
     display: grid;
-    grid-template-columns: repeat(3, 2fr);
+    grid-template-columns: repeat(4, 2fr);
     align-items: center;
 
 }
 .menuPics{
-    margin: 20px;
+    margin: 50px;
     border-radius: 10%;
     width: 200px;
     height: 170px;
@@ -172,6 +181,7 @@ a{
 }
 
   .menuspan{
+      color: rgb(16,24,32,0.8);
     font-family: 'Italianno', cursive;
     font-size: 32px;
    position: relative;
@@ -229,9 +239,69 @@ margin: 25px;
     font-size: 30px; 
  }
  p{
+    color: rgb(16,24,32,0.8);
      margin: 25px;
     font-size: 30px; 
  }
- svg{
-    margin-bottom: 50px;
+
+ .contacts>a{
+   
+     margin-bottom: 50px;
+ }
+
+
+
+
+ /* Media */
+ @media(max-width: 550px){
+
+
+    h1{
+        font-size: 30px;
+        left: 30px;
+    }
+    .spantitle{
+        font-size: 25px;
+    }
+    button{
+        font-size: 20px;
+    }
+    .active{
+        transform: scale(1.1) 
+    }
+#img{
+ width: 300px;
+ height: 200px;
+}
+.text>h2{
+    font-size: 28px;
+}
+.text>p{
+    font-size: 25px;
+}
+    
+
+    .beverages{
+        margin-top: 250px;
+    }
+     .menuPics{
+         width: 100px;
+         height: 100px;
+     }
+.menuspan{
+    font-size: 25px;
+    margin-left: 150px;
+    margin-right: 50px;
+}
+.ingredients{
+    font-size: 25px;
+}
+.contacts>p{
+    font-size: 25px;
+}
+
+
+.footer>span{
+    font-size: 20px;
+}
  }

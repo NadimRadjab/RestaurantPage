@@ -4,24 +4,24 @@ import { menu } from './menu'
 import { contacts } from './contacts'
 
 
-homePage()
+homePage();
 
 const homeButton = document.querySelector('#Home')
 
 homeButton.addEventListener('click', (e) => {
 
 
-    homePage()
+    homePage();
 
-})
+});
 const menuButton = document.querySelector('#Menu')
 menuButton.addEventListener('click', (e) => {
-    menu()
+    menu();
 
-})
+});
 
 const contactButton = document.querySelector('#Contact');
 
 contactButton.addEventListener('click', () => {
-    contacts()
-})
+    contacts();
+});

@@ -1,4 +1,3 @@
-import { contacts } from "./contacts";
 
 const menu = () => {
     const divClasses = ['Menu', 'beverages', 'pizzas', 'pastas', 'desserts'];
@@ -14,28 +13,31 @@ const menu = () => {
     ];
 
 
-    const mainDiv = document.querySelector('.main')
-    const h2 = document.createElement('h2')
-    const menuDiv = document.createElement('div')
+    const mainDiv = document.querySelector('.main');
+    const h2 = document.createElement('h2');
+    const menuDiv = document.createElement('div');
 
-    menuDiv.classList.add('remove')
+    menuDiv.classList.add('remove');
     mainDiv.append(menuDiv);
 
-    const menuB = document.querySelector('#Menu')
+    const menuB = document.querySelector('#Menu');
     menuB.disabled = true;
+    menuB.classList.add('active')
 
-    const contactsB = document.querySelector("#Contact")
+    const contactsB = document.querySelector("#Contact");
     contactsB.addEventListener('click', () => {
         menuB.disabled = false;
         menuDiv.remove()
     })
+    contactsB.classList.remove('active');
 
 
-    const homeB = document.querySelector('#Home')
+    const homeB = document.querySelector('#Home');
     homeB.addEventListener('click', () => {
         menuB.disabled = false;
         menuDiv.remove()
     })
+    homeB.classList.remove('active');
 
 
 
@@ -81,6 +83,7 @@ const menu = () => {
                 let h3B = document.createElement('h3');
                 h3B.textContent = 'Pizzas';
                 h3B.classList.add('h3Menu');
+                menuDivs.append(h3B);
                 for (let i = 0; i < pizzaPics.length; i++) {
                     const pImgs = document.createElement('img');
                     pImgs.classList.add('menuPics');
@@ -147,8 +150,8 @@ const menu = () => {
 
         }
 
-    }
-    menuFunc()
+    };
+    menuFunc();
 
 
     return {

@@ -1,6 +1,6 @@
 const loadingPage = (() => {
     const buttonText = ['Home', 'Menu', 'Contact'];
-    const spanText = ['Andreea`s Pizza and Pasta &copy; 2021 / All Rights Reserved', 'Created by Nadim Radjab'];
+    const spanText = ['Andreea`s Pizza and Pasta © 2021 / All Rights Reserved', 'Created by Nadim Radjab'];
     const contentDiv = document.querySelector('#content');
     const mainDiv = document.createElement('div');
     const titleDiv = document.createElement('div');
@@ -8,6 +8,7 @@ const loadingPage = (() => {
     const navDiv = document.createElement('div');
     const navSpan = document.createElement('span');
     const footerDiv = document.createElement('div');
+
 
 
 
@@ -30,16 +31,23 @@ const loadingPage = (() => {
 
         for (let i = 0; i < buttonText.length; i++) {
             let navButtons = document.createElement('button');
+
             navButtons.setAttribute('id', buttonText[i])
             navButtons.textContent = buttonText[i];
             navDiv.append(navButtons)
         }
-    };
-    for (let i = 0; i < spanText.length; i++) {
-        let footerSpans = document.createElement('span');
-        footerSpans.classList.add('footerspan')
-        footerSpans.textContent = spanText[i];
-        footerDiv.append(footerSpans)
+
+        for (let i = 0; i < spanText.length; i++) {
+            let footerSpans = document.createElement('span');
+            footerSpans.classList.add('footerspan');
+            footerSpans.textContent = spanText[i];
+            footerDiv.append(footerSpans);
+
+        };
+        const atag = document.createElement('a');
+        atag.href = 'https://github.com/NadimRadjab';
+        atag.innerHTML = "<i class = 'fab fa-github'></i>";
+        footerDiv.append(atag);
 
     };
     lPage();

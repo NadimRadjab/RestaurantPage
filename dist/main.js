@@ -11,7 +11,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 const loadingPage = (() => {
     const buttonText = ['Home', 'Menu', 'Contact'];
-    const spanText = ['Andreea`s Pizza and Pasta &copy; 2021 / All Rights Reserved', 'Created by Nadim Radjab'];
+    const spanText = ['Andreea`s Pizza and Pasta © 2021 / All Rights Reserved', 'Created by Nadim Radjab'];
     const contentDiv = document.querySelector('#content');
     const mainDiv = document.createElement('div');
     const titleDiv = document.createElement('div');
@@ -19,6 +19,7 @@ const loadingPage = (() => {
     const navDiv = document.createElement('div');
     const navSpan = document.createElement('span');
     const footerDiv = document.createElement('div');
+
 
 
 
@@ -41,16 +42,23 @@ const loadingPage = (() => {
 
         for (let i = 0; i < buttonText.length; i++) {
             let navButtons = document.createElement('button');
+
             navButtons.setAttribute('id', buttonText[i])
             navButtons.textContent = buttonText[i];
             navDiv.append(navButtons)
         }
-    };
-    for (let i = 0; i < spanText.length; i++) {
-        let footerSpans = document.createElement('span');
-        footerSpans.classList.add('footerspan')
-        footerSpans.textContent = spanText[i];
-        footerDiv.append(footerSpans)
+
+        for (let i = 0; i < spanText.length; i++) {
+            let footerSpans = document.createElement('span');
+            footerSpans.classList.add('footerspan');
+            footerSpans.textContent = spanText[i];
+            footerDiv.append(footerSpans);
+
+        };
+        const atag = document.createElement('a');
+        atag.href = 'https://github.com/NadimRadjab';
+        atag.innerHTML = "<i class = 'fab fa-github'></i>";
+        footerDiv.append(atag);
 
     };
     lPage();
@@ -83,25 +91,28 @@ const homePage = () => {
     const h2 = document.createElement('h2');
     const p = document.createElement('p');
     const h3 = document.createElement('h3');
-    const homeDiv = document.createElement('div')
-    homeDiv.classList.add('homeD')
+    const homeDiv = document.createElement('div');
+    homeDiv.classList.add('homeD');
     mainDiv.append(homeDiv);
 
 
     const homeButton = document.querySelector('#Home');
     homeButton.disabled = true;
+    homeButton.classList.add('active')
 
     const menuButton = document.querySelector('#Menu');
     menuButton.addEventListener('click', () => {
         homeButton.disabled = false;
         homeDiv.remove();
     })
+    menuButton.classList.remove('active')
 
     const contactsButton = document.querySelector('#Contact');
     contactsButton.addEventListener('click', () => {
         homeButton.disabled = false;
         homeDiv.remove();
     });
+    contactsButton.classList.remove('active')
 
 
     const homePageFunc = () => {
@@ -122,12 +133,12 @@ const homePage = () => {
                 contentDivs.append(h2);
                 contentDivs.append(p);
             } else if (contentDivs.classList.contains('hours')) {
-                contentDivs.append(h3)
+                contentDivs.append(h3);
                 for (let j = 0; j < spanText.length; j++) {
-                    let spans = document.createElement('span')
-                    spans.classList.add('hoursspan')
-                    spans.textContent = spanText[j]
-                    contentDivs.append(spans)
+                    let spans = document.createElement('span');
+                    spans.classList.add('hoursspan');
+                    spans.textContent = spanText[j];
+                    contentDivs.append(spans);
                 }
 
 
@@ -135,7 +146,7 @@ const homePage = () => {
 
         };
     }
-    homePageFunc()
+    homePageFunc();
 
     return {
         homePageFunc
@@ -154,8 +165,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "menu": () => (/* binding */ menu)
 /* harmony export */ });
-/* harmony import */ var _contacts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
-
 
 const menu = () => {
     const divClasses = ['Menu', 'beverages', 'pizzas', 'pastas', 'desserts'];
@@ -171,28 +180,31 @@ const menu = () => {
     ];
 
 
-    const mainDiv = document.querySelector('.main')
-    const h2 = document.createElement('h2')
-    const menuDiv = document.createElement('div')
+    const mainDiv = document.querySelector('.main');
+    const h2 = document.createElement('h2');
+    const menuDiv = document.createElement('div');
 
-    menuDiv.classList.add('remove')
+    menuDiv.classList.add('remove');
     mainDiv.append(menuDiv);
 
-    const menuB = document.querySelector('#Menu')
+    const menuB = document.querySelector('#Menu');
     menuB.disabled = true;
+    menuB.classList.add('active')
 
-    const contactsB = document.querySelector("#Contact")
+    const contactsB = document.querySelector("#Contact");
     contactsB.addEventListener('click', () => {
         menuB.disabled = false;
         menuDiv.remove()
     })
+    contactsB.classList.remove('active');
 
 
-    const homeB = document.querySelector('#Home')
+    const homeB = document.querySelector('#Home');
     homeB.addEventListener('click', () => {
         menuB.disabled = false;
         menuDiv.remove()
     })
+    homeB.classList.remove('active');
 
 
 
@@ -238,6 +250,7 @@ const menu = () => {
                 let h3B = document.createElement('h3');
                 h3B.textContent = 'Pizzas';
                 h3B.classList.add('h3Menu');
+                menuDivs.append(h3B);
                 for (let i = 0; i < pizzaPics.length; i++) {
                     const pImgs = document.createElement('img');
                     pImgs.classList.add('menuPics');
@@ -332,23 +345,29 @@ const contacts = () => {
     const contactsDiv = document.createElement('div');
     contactsDiv.classList.add('contacts');
     mainDiv.append(contactsDiv);
-    const h2 = document.createElement('h2')
+    const h2 = document.createElement('h2');
     const contactsButton = document.querySelector('#Contact');
 
-
     contactsButton.disabled = true;
+    contactsButton.classList.add('active');
 
     const homeButton = document.querySelector('#Home');
     homeButton.disabled = false;
+    homeButton.classList.remove('active');
+
     const menuButton = document.querySelector('#Menu');
     menuButton.addEventListener('click', () => {
+
         contactsButton.disabled = false;
         contactsDiv.remove();
     });
+    menuButton.classList.remove('active');
+
     homeButton.addEventListener('click', () => {
         contactsButton.disabled = false;
         contactsDiv.remove();
     });
+
 
 
     const contactsStuff = () => {
@@ -370,34 +389,15 @@ const contacts = () => {
         contactsDiv.append(pframe);
         pframe.append(iframe);
 
-        // const fSpan = document.createElement('span');
-        // fSpan.classList.add('fSpan');
-        // fSpan.textContent = 'Follow us on';
-        // contactsDiv.append(fSpan);
-
-        // const vSpan = document.createElement('span');
-        // contactsDiv.append(vSpan)
-
-        // const svg = document.createElement('svg')
-        // vSpan.append(svg);
-        // svg.height = "40";
-        // svg.width = "40"
-        // svg.viewBox = "126.445 2.281 589 589"
-        // svg.xmlns = "http://www.w3.org/2000/svg";
+        const fSpan = document.createElement('span');
+        fSpan.classList.add('fSpan');
+        fSpan.textContent = 'Follow us on';
+        contactsDiv.append(fSpan);
+        const aF = document.createElement('a');
+        aF.innerHTML = '<i class="fab fa-facebook"></i>';
+        contactsDiv.append(aF);
 
 
-        // const circle = document.createElement('circle')
-        // circle.cx = "420.945";
-        // circle.cy = "296.781";
-        // circle.fill = "#3c5a9a";
-        // circle.r = "294.5";
-        // svg.append(circle);
-
-        // const path = document.createElement('path')
-        // path.d = "m516.704 92.677h-65.239c-38.715 0-81.777 16.283-81.777 72.402.189 19.554 0 38.281 0 59.357h-44.788v71.271h46.174v205.177h84.847v-206.531h56.002l5.067-70.117h-62.531s.14-31.191 0-40.249c0-22.177 23.076-20.907 24.464-20.907 10.981 0 32.332.032 37.813 0v-70.403z";
-        // path.fill = "#fff";
-
-        // svg.append(path)
 
 
     }
@@ -481,27 +481,27 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-(0,_home__WEBPACK_IMPORTED_MODULE_1__.homePage)()
+(0,_home__WEBPACK_IMPORTED_MODULE_1__.homePage)();
 
 const homeButton = document.querySelector('#Home')
 
 homeButton.addEventListener('click', (e) => {
 
 
-    ;(0,_home__WEBPACK_IMPORTED_MODULE_1__.homePage)()
+    ;(0,_home__WEBPACK_IMPORTED_MODULE_1__.homePage)();
 
-})
+});
 const menuButton = document.querySelector('#Menu')
 menuButton.addEventListener('click', (e) => {
-    ;(0,_menu__WEBPACK_IMPORTED_MODULE_2__.menu)()
+    ;(0,_menu__WEBPACK_IMPORTED_MODULE_2__.menu)();
 
-})
+});
 
 const contactButton = document.querySelector('#Contact');
 
 contactButton.addEventListener('click', () => {
-    (0,_contacts__WEBPACK_IMPORTED_MODULE_3__.contacts)()
-})
+    (0,_contacts__WEBPACK_IMPORTED_MODULE_3__.contacts)();
+});
 
 })();
 

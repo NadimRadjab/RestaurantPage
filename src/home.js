@@ -6,25 +6,28 @@ const homePage = () => {
     const h2 = document.createElement('h2');
     const p = document.createElement('p');
     const h3 = document.createElement('h3');
-    const homeDiv = document.createElement('div')
-    homeDiv.classList.add('homeD')
+    const homeDiv = document.createElement('div');
+    homeDiv.classList.add('homeD');
     mainDiv.append(homeDiv);
 
 
     const homeButton = document.querySelector('#Home');
     homeButton.disabled = true;
+    homeButton.classList.add('active')
 
     const menuButton = document.querySelector('#Menu');
     menuButton.addEventListener('click', () => {
         homeButton.disabled = false;
         homeDiv.remove();
     })
+    menuButton.classList.remove('active')
 
     const contactsButton = document.querySelector('#Contact');
     contactsButton.addEventListener('click', () => {
         homeButton.disabled = false;
         homeDiv.remove();
     });
+    contactsButton.classList.remove('active')
 
 
     const homePageFunc = () => {
@@ -45,12 +48,12 @@ const homePage = () => {
                 contentDivs.append(h2);
                 contentDivs.append(p);
             } else if (contentDivs.classList.contains('hours')) {
-                contentDivs.append(h3)
+                contentDivs.append(h3);
                 for (let j = 0; j < spanText.length; j++) {
-                    let spans = document.createElement('span')
-                    spans.classList.add('hoursspan')
-                    spans.textContent = spanText[j]
-                    contentDivs.append(spans)
+                    let spans = document.createElement('span');
+                    spans.classList.add('hoursspan');
+                    spans.textContent = spanText[j];
+                    contentDivs.append(spans);
                 }
 
 
@@ -58,7 +61,7 @@ const homePage = () => {
 
         };
     }
-    homePageFunc()
+    homePageFunc();
 
     return {
         homePageFunc
