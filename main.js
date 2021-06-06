@@ -7,7 +7,8 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "loadingPage": () => (/* binding */ loadingPage)
+/* harmony export */   "loadingPage": () => (/* binding */ loadingPage),
+/* harmony export */   "homePage": () => (/* binding */ homePage)
 /* harmony export */ });
 const loadingPage = (() => {
     const buttonText = ['Home', 'Menu', 'Contact']
@@ -43,6 +44,7 @@ const loadingPage = (() => {
 
         for (let i = 0; i < buttonText.length; i++) {
             let navButtons = document.createElement('button');
+            navButtons.setAttribute('id', buttonText[i])
             navButtons.textContent = buttonText[i];
             navDiv.append(navButtons)
         }
@@ -63,6 +65,69 @@ const loadingPage = (() => {
 })();
 
 
+const homePage = () => {
+    const divClasses = ['mainPic', 'text', 'hours'];
+    const spanText = ['Mon-Friday: 8:00 - 19:00', ' Satarday: 8:00 - 15:00', 'Sunday : Closed'];
+    // const contentDiv = document.querySelector('#content')
+    const mainDiv = document.querySelector('.main');
+    const img = document.createElement('img');
+    const h2 = document.createElement('h2');
+    const p = document.createElement('p');
+    const h3 = document.createElement('h3');
+    const menuDiv = document.createElement('div')
+    menuDiv.setAttribute('id', 'remove')
+    menuDiv.classList.add('remove')
+    mainDiv.append(menuDiv);
+    const removeButton = document.querySelector('#Menu')
+    const stopButton = document.querySelector('#Home')
+    stopButton.disabled = true;
+
+    removeButton.addEventListener('click', () => {
+        stopButton.disabled = false;
+        menuDiv.remove()
+    })
+
+
+    const homePageFunc = () => {
+        img.src = "imgs/3.jpg";
+        img.setAttribute('id', 'img')
+        h2.textContent = 'The best Pizza in Germany since 1992';
+        p.textContent = 'Andrea`s Pizza provide variety of pizzas and pastas,  and also includes custom made Pizzas.'
+        h3.textContent = 'Hours'
+
+        for (let i = 0; i < divClasses.length; i++) {
+            const contentDivs = document.createElement('div');
+            contentDivs.classList.add(divClasses[i]);
+            menuDiv.append(contentDivs)
+
+            if (contentDivs.classList.contains('mainPic')) {
+                contentDivs.append(img);
+            } else if (contentDivs.classList.contains('text')) {
+                contentDivs.append(h2);
+                contentDivs.append(p);
+            } else if (contentDivs.classList.contains('hours')) {
+                contentDivs.append(h3)
+                for (let j = 0; j < spanText.length; j++) {
+                    let spans = document.createElement('span')
+                    spans.classList.add('hoursspan')
+                    spans.textContent = spanText[j]
+                    contentDivs.append(spans)
+                }
+
+
+            }
+
+        };
+    }
+    homePageFunc()
+
+    return {
+        homePageFunc
+    }
+
+};
+
+
 
 /***/ }),
 /* 2 */
@@ -72,26 +137,45 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "menu": () => (/* binding */ menu)
 /* harmony export */ });
-const menu = (() => {
+const menu = () => {
     const divClasses = ['Menu', 'beverages', 'pizzas', 'pastas', 'desserts'];
     const aTagText = ['Beverages', 'Pizzas', 'Pastas', 'Desserts'];
-    const pizzaPics = ['imgs/pizza-margherita.jpg', 'imgs/pizza-fontina.jpg', 'imgs/pizza-siciliana.jpg', 'imgs/pizza-padellino.jpg'];
+    const pizzaPics = ['imgs/pizza-margherita.jpg', 'imgs/pizza-fontina.jpg', 'imgs/pizza-siciliana.jpg',
+        'imgs/pizza-padellino.jpg'];
     const beveragesPics = ['imgs/cola.jpg', 'imgs/sprite.jpg']
     const spanB = ['Coca Cola 2,20$', 'Sprite 2,20$']
-    const spanP = ['Pizza Margherita 9,25&euro;', 'Pizza Fontina 11,55&euro;', 'Pizza Siciliana 14,20&euro', 'Pizza Padellino 16,30&euro;']
+    const spanP = ['Pizza Margherita 9,25$', 'Pizza Fontina 11,55$', 'Pizza Siciliana 14,20$', 'Pizza Padellino 16,30$']
     const spanI = ['Ingredients: Dough, tomato sauce, cheese.', 'Ingredients: Eggs, dough, fontina cheese, parsley.', 'Ingredients: Dough, tomato sause, sausages , Basil leaves.',
         'Ingredients: Dough, Mozzarella, plum tomato,Olive oil,fresh basil leaves.'
     ];
-    const h2 = document.createElement('h2')
     const mainDiv = document.querySelector('.main')
+    const h2 = document.createElement('h2')
+    const menuDiv = document.createElement('div')
+    menuDiv.setAttribute('id', 'remove')
+    menuDiv.classList.add('remove')
+    mainDiv.append(menuDiv);
+    const menuB = document.querySelector('#Menu')
+    menuB.disabled = true;
+    menuB.addEventListener('click', () => {
+
+    });
+
+    const homeB = document.querySelector('#Home')
+
+    homeB.addEventListener('click', () => {
+        menuB.disabled = false;
+        menuDiv.remove()
+    })
+
 
 
     const menuFunc = () => {
+
         h2.textContent = 'Menu'
         for (let i = 0; i < divClasses.length; i++) {
             const menuDivs = document.createElement('div');
             menuDivs.classList.add(divClasses[i])
-            mainDiv.append(menuDivs)
+            menuDiv.append(menuDivs)
 
             if (menuDivs.classList.contains('Menu')) {
                 menuDivs.append(h2);
@@ -108,10 +192,13 @@ const menu = (() => {
                 menuDivs.append(h3B);
                 for (let k = 0; k < beveragesPics.length; k++) {
                     const bImgs = document.createElement('img');
+
                     bImgs.classList.add('menuPics');
                     bImgs.src = beveragesPics[k];
                     menuDivs.append(bImgs);
+
                     const bSpans = document.createElement('span');
+
                     bSpans.classList.add('menuspan');
                     menuDivs.append(bSpans);
                     bSpans.textContent = spanB[k];
@@ -127,29 +214,86 @@ const menu = (() => {
                     pImgs.classList.add('menuPics');
                     pImgs.src = pizzaPics[i];
                     menuDivs.append(pImgs);
+
                     const pSpan = document.createElement('span')
                     pSpan.classList.add('menuspan');
                     pSpan.textContent = spanP[i];
                     menuDivs.append(pSpan)
+
                     const iSpan = document.createElement('span');
                     iSpan.classList.add('ingredients');
                     iSpan.textContent = spanI[i];
                     menuDivs.append(iSpan);
-
-
                 }
 
+            } else if (menuDivs.classList.contains('pastas')) {
+                let h3B = document.createElement('h3');
+                h3B.textContent = 'Pastas';
+                h3B.classList.add('h3Menu');
+                menuDivs.append(h3B);
+
+                const pastaImg = document.createElement('img');
+                pastaImg.classList.add('menuPics');
+                pastaImg.src = 'imgs/pasta-cannelloni.jpg'
+                menuDivs.append(pastaImg);
+
+                const spanPasta = document.createElement('span');
+                spanPasta.classList.add('menuspan');
+                spanPasta.textContent = 'Pasta Cannelloni 9,25$';
+                menuDivs.append(spanPasta);
+
+                const spanPastaIn = document.createElement('span');
+                spanPastaIn.classList.add('ingredients');
+                spanPastaIn.textContent = 'Ingredients: Cannelloni, onions, ricotta, Parmesan.'
+                menuDivs.append(spanPastaIn);
+
+
+            } else if (menuDivs.classList.contains('desserts')) {
+                let h3B = document.createElement('h3');
+                h3B.textContent = 'Deserts';
+                h3B.classList.add('h3Menu');
+                menuDivs.append(h3B);
+
+                const dessertImg = document.createElement('img');
+                dessertImg.classList.add('menuPics');
+                dessertImg.src = 'imgs/tiramisu.jpg'
+                menuDivs.append(dessertImg);
+
+                const spanDessert = document.createElement('span');
+                spanDessert.classList.add('menuspan');
+                spanDessert.textContent = 'Tiramisù 7,25$';
+                menuDivs.append(spanDessert);
+
+                const spanDessertIn = document.createElement('span');
+                spanDessertIn.classList.add('ingredients');
+                spanDessertIn.textContent = 'Ingredients: Eggs, sugar, cocoa powder, coffe.'
+                menuDivs.append(spanDessertIn);
+
+
             }
+
 
         }
 
     }
     menuFunc()
 
+    const test = () => {
+        if (menuDiv.classList.contains('remove')) {
+            menuDiv.remove()
+        }
+
+    }
+
     return {
         menuFunc
     }
-})();
+};
+
+
+
+
+
 
 
 
@@ -217,8 +361,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _LoadingPage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
 
-
 // import { homePage } from './home'
+
+
+
+const homeButton = document.querySelector('#Home')
+
+homeButton.addEventListener('click', (e) => {
+
+
+    ;(0,_LoadingPage__WEBPACK_IMPORTED_MODULE_0__.homePage)()
+
+})
+const menuButton = document.querySelector('#Menu')
+menuButton.addEventListener('click', (e) => {
+    ;(0,_menu__WEBPACK_IMPORTED_MODULE_1__.menu)()
+
+})
+
 })();
 
 /******/ })()
