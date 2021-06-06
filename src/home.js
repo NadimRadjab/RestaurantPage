@@ -31,7 +31,7 @@ const homePage = () => {
 
 
     const homePageFunc = () => {
-        img.src = "imgs/3.jpg";
+        img.src = "Imgs/3.jpg";
         img.setAttribute('id', 'img')
         h2.textContent = 'The best Pizza in Germany since 1992';
         p.textContent = 'Andrea`s Pizza provide variety of pizzas and pastas,  and also includes custom made Pizzas.'
