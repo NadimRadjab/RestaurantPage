@@ -298,7 +298,7 @@ const menu = () => {
 
                 const dessertImg = document.createElement('img');
                 dessertImg.classList.add('menuPics');
-                dessertImg.src = 'imgs/tiramisu.jpg'
+                dessertImg.src = 'Imgs/tiramisu.jpg'
                 menuDivs.append(dessertImg);
 
                 const spanDessert = document.createElement('span');
